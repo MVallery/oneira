@@ -1,7 +1,7 @@
 import { mockDreams } from './mockDreams';
 import { mockSigns } from './mockSigns';
 
-export const mockSignTexts = {
+export const mockSignTextsObj = {
   1: [
     {
       id: '1',
@@ -41,3 +41,9 @@ export const mockSignTexts = {
     },
   ],
 };
+
+export const mockSignText = [
+  ...mockSignTextsObj[1],
+  ...mockSignTextsObj[2],
+  ...mockSignTextsObj[3],
+];

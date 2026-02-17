@@ -7,7 +7,13 @@ import { Platform } from 'react-native';
 
 const tintColorLight = '#0a7ea4';
 const tintColorDark = '#fff';
-
+export const categoryColors = {
+  Setting: { bg: 'rgba(17, 97, 57, 15)', border: '#0B472B' },
+  Action: { bg: 'rgba(27, 56, 89, 8)', border: '#27405B' },
+  Emotion: '',
+  Character: { bg: 'rgba(71, 65, 43, 18)', border: '#4B3300' },
+  Other: { bg: 'rgba(89, 27, 27, 12)', border: '#3a1414' },
+};
 export const Colors = {
   light: {
     text: '#11181C',
@@ -47,7 +53,8 @@ export const Fonts = Platform.select({
   web: {
     sans: "system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif",
     serif: "Georgia, 'Times New Roman', serif",
-    rounded: "'SF Pro Rounded', 'Hiragino Maru Gothic ProN', Meiryo, 'MS PGothic', sans-serif",
+    rounded:
+      "'SF Pro Rounded', 'Hiragino Maru Gothic ProN', Meiryo, 'MS PGothic', sans-serif",
     mono: "SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace",
   },
 });

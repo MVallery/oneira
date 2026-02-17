@@ -6,6 +6,7 @@ import { Chip } from 'react-native-paper';
 import { useAppTheme } from '@/state/themeContext';
 import FormElement from './FormElement';
 import { FormElementType } from './types/formElement';
+import { OptionValue } from './types/optionValue';
 
 interface ChipSelectProps extends FormElementType {
   options: OptionValue[];
@@ -13,11 +14,11 @@ interface ChipSelectProps extends FormElementType {
   isMultiSelect?: boolean;
   onChangeEvent: (selectedOptions: OptionValue[]) => void;
 }
-export interface OptionValue {
-  value: string;
-  label: string;
-  selected?: boolean;
-}
+// export interface OptionValue {
+//   value: string;
+//   label: string;
+//   selected?: boolean;
+// }
 
 const ChipSelect = ({
   placeholder,

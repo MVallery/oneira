@@ -1,5 +1,5 @@
 import Autocomplete from './Autocomplete';
-import { OptionValue } from './ChipSelect';
+import { OptionValue } from './types/optionValue';
 
 export const CustomSelect = ({
   control,
@@ -9,14 +9,16 @@ export const CustomSelect = ({
   label,
   onChangeEvent,
   value,
+  placeholder,
 }: {
   control?: any;
   field?: any;
   options: OptionValue[];
   name: string;
-  label: string;
+  label?: string;
   onChangeEvent?: (value: any) => void;
   value?: any;
+  placeholder?: string;
 }) => {
   return (
     <Autocomplete
@@ -30,6 +32,7 @@ export const CustomSelect = ({
       label={label}
       onChangeEvent={onChangeEvent}
       value={value}
+      placeholder={placeholder}
     />
   );
 };

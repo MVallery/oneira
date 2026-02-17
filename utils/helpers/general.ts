@@ -1,4 +1,5 @@
-export const clone = <T>(obj: T): T => obj ? JSON.parse(JSON.stringify(obj) ) : obj;
+export const clone = <T>(obj: T): T =>
+  obj ? JSON.parse(JSON.stringify(obj)) : obj;
 
 export const getGrade = (n: string) => {
   switch (n) {
@@ -19,16 +20,30 @@ export const capitalize = (val: string) => {
   return String(val).charAt(0).toUpperCase() + String(val).slice(1);
 };
 
-
 export const shuffleArray = (array: any[]) => {
   let arrayCopy = [...array];
-    for (let i = arrayCopy.length - 1; i > 0; i--) {
-        const j = Math.floor(Math.random() * (i + 1));
-        [arrayCopy[i], arrayCopy[j]] = [arrayCopy[j], arrayCopy[i]];
-    }
-    return ([...arrayCopy])
+  for (let i = arrayCopy.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [arrayCopy[i], arrayCopy[j]] = [arrayCopy[j], arrayCopy[i]];
   }
+  return [...arrayCopy];
+};
 
 export const selectRand = (array: any[]) => {
-  return shuffleArray(array)[0]
-}
+  return shuffleArray(array)[0];
+};
+
+export const getCategory = (categoryId: string) => {
+  switch (categoryId) {
+    case '1':
+      return 'Setting';
+    case '2':
+      return 'Character';
+    case '3':
+      return 'Action';
+    case '4':
+      return 'Other';
+    default:
+      return 'Other';
+  }
+};

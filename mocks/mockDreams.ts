@@ -4,7 +4,7 @@ export const mockDreams = [
   // maybe they tag flying and all flying highlights
   {
     id: '1',
-    userId: '1',
+    user: '1',
     title: 'Flying over a city',
     description: `I was flying over a city and it felt amazing. First I was scared, but then I realized I could control 
     it and it was so much fun. The city looked beautiful from above, with all the lights and buildings. I felt free and 
@@ -27,7 +27,7 @@ export const mockDreams = [
   },
   {
     id: '2',
-    userId: '1',
+    user: '1',
     title: 'Falling down gently',
     description: `I was falling down gently from the sky. It was a strange sensation, but not scary at all. I felt like I was 
     floating and drifting down slowly. The world around me looked peaceful and calm. I could see the clouds and the sunset in the distance. It was a beautiful sight. I felt relaxed and at ease. I woke up feeling refreshed and calm. One
@@ -47,7 +47,7 @@ export const mockDreams = [
   },
   {
     id: '3',
-    userId: '1',
+    user: '1',
     title: 'Big Family Gathering',
     description: `I was at a big family gathering, surrounded by relatives I hadn\'t seen in years. The house was filled with 
     laughter and chatter, and the aroma of delicious food wafted through the air. I felt a mix of emotions - happiness to be
