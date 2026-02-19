@@ -1,15 +1,14 @@
 import PageContainer from '@/components/layout/Page';
-import CustomText from '@/components/ui/Text';
 import AuthSharedScreen from '@/features/account/AuthSharedScreen';
 import { useAppTheme } from '@/state/themeContext';
-import { useSignup } from './hooks/useSignup';
-import { getSupabaseClient } from './supabase/supabase';
-const supabase = getSupabaseClient();
+// import { useSignup } from './hooks/useSignup';
+// import { getSupabaseClient } from './supabase/supabase';
+// const supabase = getSupabaseClient();
 
 const SignupScreen = ({ paragraph }: { paragraph: string }) => {
   const { theme } = useAppTheme();
   const { colors } = theme;
-  const { error, loading, data, signup } = useSignup();
+  // const { error, loading, data, signup } = useSignup();
 
   return (
     <PageContainer
@@ -22,10 +21,10 @@ const SignupScreen = ({ paragraph }: { paragraph: string }) => {
         buttonText='Sign Up'
         linkText='Login'
         linkHref='/auth/login'
-        loading={loading}
+        // loading={loading}
         paragraph={paragraph}
       >
-        {error && (
+        {/* {error && (
           <CustomText
             color={colors.onErrorContainer}
             style={{ maxWidth: 420, paddingTop: 20, lineHeight: 25 }}
@@ -40,7 +39,7 @@ const SignupScreen = ({ paragraph }: { paragraph: string }) => {
           >
             Please click the link in your email for account confirmation.
           </CustomText>
-        )}
+        )} */}
       </AuthSharedScreen>
     </PageContainer>
   );

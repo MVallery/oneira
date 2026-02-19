@@ -1,8 +1,10 @@
-import SignupScreen from '../account/SignupScreen';
+import { DreamOverviewScreen } from '../dream-overview/DreamOverviewScreen';
 
 const MobileLandingScreen = () => {
+  console.log('Rendering MobileLandingScreen');
   return (
-    <SignupScreen paragraph='Sign up to Oneira now to quickly track and analyze your student data right from the seating chart.' />
+    <DreamOverviewScreen />
+    // <SignupScreen paragraph='Sign up to Oneira now to quickly track and analyze your student data right from the seating chart.' />
   );
 };
 

@@ -1,14 +1,13 @@
 import PageContainer from '@/components/layout/Page';
 import CustomText from '@/components/ui/Text';
 import AuthSharedScreen from '@/features/account/AuthSharedScreen';
-import { router } from 'expo-router';
 import { useEffect, useState } from 'react';
 import { Linking, View } from 'react-native';
-import { getSupabaseClient } from './supabase/supabase';
+// import { getSupabaseClient } from './supabase/supabase';
 
 import CustomLink from '@/components/ui/Link';
 import { useAppTheme } from '@/state/themeContext';
-const supabase = getSupabaseClient();
+// const supabase = getSupabaseClient();
 
 const PasswordResetScreen = () => {
   const { theme } = useAppTheme();
@@ -20,25 +19,25 @@ const PasswordResetScreen = () => {
 
   const onSubmit = async (acctData: any) => {
     setLoading(true);
-    const { data, error } = await supabase.auth.updateUser({
-      password: acctData.password,
-    });
-    if (data && data.user) {
-      router.replace('/auth/login');
-      router.replace({
-        pathname: '/auth/login',
-        params: { fromReset: 'true' },
-      });
-    }
+    // const { data, error } = await supabase.auth.updateUser({
+    //   password: acctData.password,
+    // });
+    // if (data && data.user) {
+    //   router.replace('/auth/login');
+    //   router.replace({
+    //     pathname: '/auth/login',
+    //     params: { fromReset: 'true' },
+    //   });
+    // }
     setLoading(false);
   };
 
   useEffect(() => {
-    supabase.auth.onAuthStateChange(async (event: any, session: any) => {
-      if (event == 'PASSWORD_RECOVERY') {
-        setPasswordRecovery(true);
-      }
-    });
+    // supabase.auth.onAuthStateChange(async (event: any, session: any) => {
+    //   if (event == 'PASSWORD_RECOVERY') {
+    //     setPasswordRecovery(true);
+    //   }
+    // });
 
     // Handle URL parameters if they exist, it means the user used an old link to reset their password
     Linking.getInitialURL().then((url) => {

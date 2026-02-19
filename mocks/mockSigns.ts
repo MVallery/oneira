@@ -6,14 +6,13 @@ const getDreamCount = (signId: string) => {
     0,
   );
 };
-export const mockSigns = [
+export const signs = [
   {
     id: '1',
     user: '1',
     category: '3',
     name: 'Flying',
     color: '#FF5733',
-    count: getDreamCount('1'),
   },
   {
     id: '2',
@@ -21,7 +20,6 @@ export const mockSigns = [
     category: '3',
     name: 'Falling Down',
     color: '#33FF57',
-    count: getDreamCount('2'),
   },
   {
     id: '3',
@@ -29,7 +27,6 @@ export const mockSigns = [
     category: '3',
     name: 'Running',
     color: '#3357FF',
-    count: getDreamCount('3'),
   },
   {
     id: '4',
@@ -37,7 +34,6 @@ export const mockSigns = [
     category: '3',
     name: 'Swimming In Ocean',
     color: '#FF33A1',
-    count: getDreamCount('4'),
   },
   {
     id: '5',
@@ -45,7 +41,6 @@ export const mockSigns = [
     category: '1',
     name: 'Huge City',
     color: '#FF5733',
-    count: getDreamCount('5'),
   },
 
   {
@@ -54,7 +49,6 @@ export const mockSigns = [
     category: '1',
     name: 'Beach',
     color: '#33FF57',
-    count: getDreamCount('6'),
   },
   {
     id: '7',
@@ -62,7 +56,6 @@ export const mockSigns = [
     category: '1',
     name: 'Foggy Forest',
     color: '#3357FF',
-    count: getDreamCount('7'),
   },
   {
     id: '8',
@@ -70,7 +63,6 @@ export const mockSigns = [
     category: '1',
     name: 'Mountains',
     color: '#91436d',
-    count: getDreamCount('8'),
   },
   {
     id: '9',
@@ -79,7 +71,6 @@ export const mockSigns = [
     name: 'Christine',
     characterGroup: 'friends',
     color: '#040504',
-    count: getDreamCount('9'),
   },
   {
     id: '10',
@@ -87,7 +78,6 @@ export const mockSigns = [
     category: '2',
     name: 'John',
     color: '#33FF57',
-    count: getDreamCount('10'),
   },
   {
     id: '11',
@@ -96,7 +86,6 @@ export const mockSigns = [
     name: 'Alice',
     characterGroup: 'work',
     color: '#3357FF',
-    count: getDreamCount('11'),
   },
   {
     id: '12',
@@ -104,7 +93,6 @@ export const mockSigns = [
     category: '2',
     name: 'Bob',
     color: '#FF33A1',
-    count: getDreamCount('12'),
   },
   {
     id: '13',
@@ -112,7 +100,6 @@ export const mockSigns = [
     category: '1',
     name: 'Sunset',
     color: '#FF5733',
-    count: getDreamCount('13'),
   },
   {
     id: '14',
@@ -120,7 +107,6 @@ export const mockSigns = [
     category: '1',
     name: 'Gathering',
     color: '#FF5733',
-    count: getDreamCount('14'),
   },
   {
     id: '15',
@@ -128,6 +114,12 @@ export const mockSigns = [
     category: '4',
     name: 'Food',
     color: '#FF5733',
-    count: getDreamCount('15'),
   },
 ];
+
+export const mockSigns = signs.map((sign) => {
+  return {
+    ...sign,
+    count: getDreamCount(sign.id),
+  };
+});

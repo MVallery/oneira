@@ -6,7 +6,7 @@ import { useAppTheme } from '@/state/themeContext';
 import { clone } from '@/utils/helpers/general';
 import { Link, router } from 'expo-router';
 import { useController } from 'react-hook-form';
-import { Text, View } from 'react-native';
+import { View } from 'react-native';
 import { useDispatch, useSelector } from 'react-redux';
 
 import { CustomSelect } from '@/components/form/Select';
@@ -145,7 +145,7 @@ const SettingScreen = () => {
             style={{ color: theme.colors.onBackground }}
             replace={true}
           >
-            <Text style={{ fontSize: 18 }}>Cancel</Text>
+            <CustomText style={{ fontSize: 18 }}>Cancel</CustomText>
           </Link>
         </View>
         <CustomButton

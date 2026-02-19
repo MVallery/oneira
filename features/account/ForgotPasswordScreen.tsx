@@ -2,11 +2,10 @@ import PageContainer from '@/components/layout/Page';
 import CustomText from '@/components/ui/Text';
 import AuthSharedScreen from '@/features/account/AuthSharedScreen';
 import { useAppTheme } from '@/state/themeContext';
-import { isWeb } from '@/utils/constants/platform';
 import { useEffect, useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { getSupabaseClient } from './supabase/supabase';
-const supabase = getSupabaseClient();
+// import { getSupabaseClient } from './supabase/supabase';
+// const supabase = getSupabaseClient();
 
 const ForgotPasswordScreen = () => {
   const { theme } = useAppTheme();
@@ -18,32 +17,32 @@ const ForgotPasswordScreen = () => {
   const [loading, setLoading] = useState(false);
 
   const onSubmit = async (acctData: any) => {
-    setLoading(true);
-    const { data, error } = await supabase.auth.resetPasswordForEmail(
-      acctData.email,
-      {
-        redirectTo:
-          (isWeb
-            ? process.env.EXPO_PUBLIC_URL
-            : process.env.EXPO_PUBLIC_URL_MOBILE) + '/auth/reset_password',
-      },
-    );
-    if (error) {
-      // console.error('Error signing up:', error);
-      setError(error.message);
-    } else if (data) {
-      // console.log('Sign up successful:', data);
-      setData(data);
-    }
-    setLoading(false);
+    // setLoading(true);
+    // const { data, error } = await supabase.auth.resetPasswordForEmail(
+    //   acctData.email,
+    //   {
+    //     redirectTo:
+    //       (isWeb
+    //         ? process.env.EXPO_PUBLIC_URL
+    //         : process.env.EXPO_PUBLIC_URL_MOBILE) + '/auth/reset_password',
+    //   },
+    // );
+    // if (error) {
+    //   // console.error('Error signing up:', error);
+    //   setError(error.message);
+    // } else if (data) {
+    //   // console.log('Sign up successful:', data);
+    //   setData(data);
+    // }
+    // setLoading(false);
   };
 
   useEffect(() => {
-    supabase.auth.onAuthStateChange(async (event: any, session: any) => {
-      if (event == 'PASSWORD_RECOVERY') {
-        setResetRecovery(true);
-      }
-    });
+    // supabase.auth.onAuthStateChange(async (event: any, session: any) => {
+    //   if (event == 'PASSWORD_RECOVERY') {
+    //     setResetRecovery(true);
+    //   }
+    // });
   }, []);
   return (
     <PageContainer

@@ -59,7 +59,7 @@ const AuthSharedScreen = ({
     >
       <Image
         style={{ width: 250, height: 163 }}
-        source={require('@/assets/images/logo-stack.png')}
+        source={require('@/assets/images/logo-stacked.png')}
       />
       {title && (
         <CustomText

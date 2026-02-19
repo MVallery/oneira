@@ -33,7 +33,7 @@ const Header = ({}) => {
         <Link href='/' asChild replace={true}>
           <Image
             source={require('@/assets/images/logo.png')}
-            style={{ width: 200, height: 40, marginLeft: 20 }}
+            style={{ width: 100, height: 50, marginLeft: 20 }}
           />
         </Link>
         {/* <Text style={{ color: colors.onSecondary }}>Testing Header {pathname}</Text> */}
@@ -41,7 +41,7 @@ const Header = ({}) => {
       <View style={{ flexDirection: 'row', alignItems: 'center', gap: 10 }}>
         {showClassesButton && user?.id && user.teacher?.id ? (
           <Link
-            href='/classes/all_classes'
+            href='/'
             replace={true}
             style={{
               display: 'flex',

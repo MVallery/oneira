@@ -1,11 +1,11 @@
 import { FlexView } from '@/components/layout/BaseViews';
+import CustomText from '@/components/ui/Text';
 import Title from '@/components/ui/Title';
 import { categoryColors } from '@/constants/theme';
 import { mockDreams } from '@/mocks/mockDreams';
 import { mockSignTextsObj } from '@/mocks/mockSignTexts';
 import { getCategory } from '@/utils/helpers/general';
 import { View } from 'react-native';
-import { Text } from 'react-native-paper';
 import styled from 'styled-components/native';
 
 const Dreamed = styled.View<{
@@ -51,9 +51,9 @@ export const SignDetailsScreen = ({ sign }) => {
       <View key={dream.id}>
         <FlexView>
           <Title size='sm'>{dream.title}</Title>
-          <Text>{dream.date}</Text>
+          <CustomText>{dream.date}</CustomText>
         </FlexView>
-        <Text>{textSign ? '"' + textSign + '"' : ''}</Text>
+        <CustomText>{textSign ? '"' + textSign + '"' : ''}</CustomText>
       </View>,
     );
   });

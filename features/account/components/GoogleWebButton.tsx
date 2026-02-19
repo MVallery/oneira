@@ -4,11 +4,11 @@ import {
   StyleSheet,
   Text,
   TouchableOpacity,
-  View
+  View,
 } from 'react-native';
 import Svg, { Path } from 'react-native-svg';
-import { getSupabaseClient } from '../supabase/supabase';
-const supabase = getSupabaseClient();
+// import { getSupabaseClient } from '../supabase/supabase';
+// const supabase = getSupabaseClient();
 type GoogleButtonProps = {
   // onPress: (event: GestureResponderEvent) => void
   isSignup?: boolean;
@@ -22,12 +22,12 @@ export default function GoogleWebButton({
   const provider = 'google';
   const redirectUrl = 'localhost:8081/auth/callback'; //: 'https://auth.expo.io/@oneira/oneira';
   const onPress = async (event: GestureResponderEvent) => {
-    await supabase.auth.signInWithOAuth({
-      provider,
-      options: {
-        redirectTo: redirectUrl,
-      },
-    });
+    // await supabase.auth.signInWithOAuth({
+    //   provider,
+    //   options: {
+    //     redirectTo: redirectUrl,
+    //   },
+    // });
     if (isSignup) {
     } else {
     }

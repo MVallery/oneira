@@ -2,13 +2,12 @@ import PageContainer from '@/components/layout/Page';
 import CustomText from '@/components/ui/Text';
 import AuthSharedScreen from '@/features/account/AuthSharedScreen';
 import { useAppTheme } from '@/state/themeContext';
-import { Link, router, useLocalSearchParams } from 'expo-router';
+import { useLocalSearchParams } from 'expo-router';
 import { useState } from 'react';
 import { StyleSheet } from 'react-native';
 import { useDispatch } from 'react-redux';
-import { setSupaUser } from './state/authSlice';
-import { getSupabaseClient } from './supabase/supabase';
-const supabase = getSupabaseClient();
+// import { getSupabaseClient } from './supabase/supabase';
+// const supabase = getSupabaseClient();
 
 const LoginScreen = () => {
   const { theme } = useAppTheme();
@@ -19,22 +18,22 @@ const LoginScreen = () => {
   const { fromReset } = useLocalSearchParams();
   const onSubmit = async (acctData: any) => {
     setLoading(true);
-    try {
-      const { data, error } = await supabase.auth.signInWithPassword({
-        email: acctData.email,
-        password: acctData.password,
-      });
+    // try {
+    //   const { data, error } = await supabase.auth.signInWithPassword({
+    //     email: acctData.email,
+    //     password: acctData.password,
+    //   });
 
-      setLoading(false);
-      if (error) {
-        setError(error.message);
-      } else {
-        dispatch(setSupaUser({ id: data.user.id, email: data.user.email }));
-        router.replace('/classes/all_classes');
-      }
-    } catch (error) {
-      console.log('Login error:', error);
-    }
+    //   setLoading(false);
+    //   if (error) {
+    //     setError(error.message);
+    //   } else {
+    //     dispatch(setSupaUser({ id: data.user.id, email: data.user.email }));
+    //     // router.replace('/classes/all_classes');
+    //   }
+    // } catch (error) {
+    //   console.log('Login error:', error);
+    // }
   };
   // // for testing - auto logs in
   // useEffect(() => {
@@ -74,9 +73,9 @@ const LoginScreen = () => {
         linkHref='/auth/signup'
         loading={loading}
       >
-        <Link style={styles.link} href='/auth/forgot_password' replace={true}>
+        {/* <Link style={styles.link} href='/auth/forgot_password' replace={true}>
           Forgot Password?
-        </Link>
+        </Link> */}
         {error && (
           <CustomText color={colors.onErrorContainer}>{error}</CustomText>
         )}

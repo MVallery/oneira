@@ -1,12 +1,13 @@
 import { FlexView } from '@/components/layout/BaseViews';
 import { Tag } from '@/components/ui/Tag';
+import CustomText from '@/components/ui/Text';
 import { View } from 'react-native';
-import { Text } from 'react-native-paper';
 
 export const DreamSignSection = ({ title, signs }) => {
+  console.log('Rendering DreamSignSection with signs:', signs);
   return (
     <View>
-      <Text>{title}</Text>
+      <CustomText>{title}</CustomText>
       <FlexView>
         {signs.map((sign) => (
           <Tag
