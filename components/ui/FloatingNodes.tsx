@@ -1,32 +1,26 @@
-// import React from 'react';
-import { Dimensions } from 'react-native';
-// import Svg, { Circle, Line, Path } from 'react-native-svg';
-// import Animated, { useSharedValue, useAnimatedStyle, withRepeat, withTiming } from 'react-native-reanimated';
-
-const { width, height } = Dimensions.get('window');
-
-// import React, { useEffect, useRef } from 'react';
-// import { Animated, StyleProp, ViewStyle } from 'react-native';
-// import Svg, { Line, Path, Circle } from 'react-native-svg';
-
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect } from 'react';
+import Animated, {
+  useAnimatedProps,
+  useSharedValue,
+  withRepeat,
+  withTiming,
+} from 'react-native-reanimated';
 import Svg, { Circle, Line } from 'react-native-svg';
-import Animated, { useSharedValue, useAnimatedProps, withRepeat, withTiming } from 'react-native-reanimated';
 
 const AnimatedCircle = Animated.createAnimatedComponent(Circle);
 const AnimatedLine = Animated.createAnimatedComponent(Line);
 
 export const FloatingNodes = ({
-  node1 = {x: 12, y:12},
-  node2 = {x:22, y: 40},
-  node3 = {x: 4, y: 20},// 32,
-  node4 = {x: 32, y: 50}, // 42,
-  style
+  node1 = { x: 12, y: 12 },
+  node2 = { x: 22, y: 40 },
+  node3 = { x: 4, y: 20 }, // 32,
+  node4 = { x: 32, y: 50 }, // 42,
+  style,
 }: {
-  node1?: {x: number, y: number};
-  node2?: {x: number, y: number};
-  node3?: {x: number, y: number};
-  node4?: {x: number, y: number};
+  node1?: { x: number; y: number };
+  node2?: { x: number; y: number };
+  node3?: { x: number; y: number };
+  node4?: { x: number; y: number };
   style?: any;
 }) => {
   const cy1 = useSharedValue(node1.y);
@@ -35,25 +29,41 @@ export const FloatingNodes = ({
   const cy4 = useSharedValue(node4.y);
 
   useEffect(() => {
-    cy1.value = withRepeat(withTiming(node1.y - 2, { duration: 2000 }), -1, true);
-    cy2.value = withRepeat(withTiming(node2.y + 2, { duration: 2500 }), -1, true);
-    cy3.value = withRepeat(withTiming(node3.y + 2, { duration: 3000 }), -1, true);
-    cy4.value = withRepeat(withTiming(node4.y + 2, { duration: 3500 }), -1, true);
+    cy1.value = withRepeat(
+      withTiming(node1.y - 2, { duration: 2000 }),
+      -1,
+      true,
+    );
+    cy2.value = withRepeat(
+      withTiming(node2.y + 2, { duration: 2500 }),
+      -1,
+      true,
+    );
+    cy3.value = withRepeat(
+      withTiming(node3.y + 2, { duration: 3000 }),
+      -1,
+      true,
+    );
+    cy4.value = withRepeat(
+      withTiming(node4.y + 2, { duration: 3500 }),
+      -1,
+      true,
+    );
   }, []);
 
   const animatedProps1 = useAnimatedProps(() => ({
-    cy: cy1.value
+    cy: cy1.value,
   }));
 
   const animatedProps2 = useAnimatedProps(() => ({
-    cy: cy2.value
+    cy: cy2.value,
   }));
 
   const animatedProps3 = useAnimatedProps(() => ({
-    cy: cy3.value
+    cy: cy3.value,
   }));
   const animatedProps4 = useAnimatedProps(() => ({
-    cy: cy4.value
+    cy: cy4.value,
   }));
 
   //   const lineProps = useAnimatedProps(() => ({
@@ -66,45 +76,77 @@ export const FloatingNodes = ({
     x1: node1.x, // fixed cx for node1
     y1: cy1.value,
     x2: node2.x, // fixed cx for node2
-    y2: cy2.value
+    y2: cy2.value,
   }));
 
   const animatedLineProps3 = useAnimatedProps(() => ({
     x1: node2.x,
     y1: cy2.value,
     x2: node3.x,
-    y2: cy3.value
+    y2: cy3.value,
   }));
 
   const animatedLineProps4 = useAnimatedProps(() => ({
     x1: node3.x,
     y1: cy3.value,
     x2: node4.x,
-    y2: cy4.value
+    y2: cy4.value,
   }));
 
   return (
     <Svg
-      width="100"
-      height="200"
-      viewBox="0 0 36 36"
+      width='100'
+      height='200'
+      viewBox='0 0 36 36'
       style={[
         {
           position: 'absolute',
           left: 0,
-          top: 100
+          top: 100,
         },
-        style || {}
+        style || {},
       ]}
     >
-      <AnimatedLine animatedProps={animatedLineProps} stroke="#AFAEAE" strokeWidth="2" />
+      <AnimatedLine
+        animatedProps={animatedLineProps}
+        stroke='#AFAEAE'
+        strokeWidth='2'
+      />
 
-      <AnimatedLine animatedProps={animatedLineProps3} stroke="#AFAEAE" strokeWidth="2" />
-      <AnimatedLine animatedProps={animatedLineProps4} stroke="#AFAEAE" strokeWidth="2" />
-      <AnimatedCircle cx={node1.x} r="3" fill="#DA711C" animatedProps={animatedProps1} />
-      <AnimatedCircle cx={node2.x} r="3" fill="#AFAEAE" animatedProps={animatedProps2} />
-      <AnimatedCircle cx="4" r="3" fill="#AFAEAE" animatedProps={animatedProps3} />
-      <AnimatedCircle cx="32" r="3" fill="#AFAEAE" animatedProps={animatedProps4} />
+      <AnimatedLine
+        animatedProps={animatedLineProps3}
+        stroke='#AFAEAE'
+        strokeWidth='2'
+      />
+      <AnimatedLine
+        animatedProps={animatedLineProps4}
+        stroke='#AFAEAE'
+        strokeWidth='2'
+      />
+      <AnimatedCircle
+        cx={node1.x}
+        r='3'
+        fill='#DA711C'
+        animatedProps={animatedProps1}
+      />
+      <AnimatedCircle
+        cx={node2.x}
+        r='3'
+        fill='#AFAEAE'
+        animatedProps={animatedProps2}
+      />
+      <AnimatedCircle
+        cx='4'
+        r='3'
+        fill='#AFAEAE'
+        animatedProps={animatedProps3}
+      />
+      <AnimatedCircle
+        cx='32'
+        r='3'
+        fill='#AFAEAE'
+        animatedProps={animatedProps4}
+      />
     </Svg>
   );
 };

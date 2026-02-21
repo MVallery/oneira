@@ -1,11 +1,10 @@
-import CustomText from '@/components/ui/Text';
-import Title from '@/components/ui/Title';
-import { useAppTheme } from '@/state/themeContext';
 import { Image, View } from 'react-native';
 
-export const MaintenancePage = () => {
-  const { colors } = useAppTheme();
+import CustomText from '@/components/ui/Text';
+import Title from '@/components/ui/Title';
+import { colors } from '@/utils/constants/theme';
 
+export const MaintenancePage = () => {
   return (
     <View
       style={{

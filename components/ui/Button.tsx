@@ -1,12 +1,10 @@
-import { useAppTheme } from '@/state/themeContext';
-import { isWeb } from '@/utils/constants/platform';
 import React from 'react';
-import {
-  ActivityIndicator,
-  StyleSheet,
-  Text
-} from 'react-native';
+import { ActivityIndicator, StyleSheet, Text } from 'react-native';
 import { Button } from 'react-native-paper';
+
+import { isWeb } from '@/utils/constants/platform';
+import { colors, fontSize } from '@/utils/constants/theme';
+
 // different modes still need to be enabled, colorSaturation /mode not working right
 type ButtonType = 'primary' | 'secondary' | 'minimal' | 'danger';
 export interface CustomButtonProps {
@@ -32,11 +30,8 @@ const CustomButton = ({
   colorSaturation = 'normal',
   style,
 }: CustomButtonProps) => {
-  const { theme, setTheme } = useAppTheme();
-  const { colors, fontSize } = theme;
-
   const mode = getMode(colorSaturation);
-  const styles = createButtonStyles(theme, disabled, type, colorSaturation);
+  const styles = createButtonStyles(disabled, type, colorSaturation);
 
   let buttonStyles = [styles.button, styles[size]];
   if (style) {
@@ -104,12 +99,10 @@ const CustomButton = ({
 export default CustomButton;
 
 export const createButtonStyles = (
-  theme: any,
   disabled: any,
   type: ButtonType,
   colorSaturation: string,
 ) => {
-  const { colors, fontSize } = theme;
   let color =
     type === 'primary'
       ? colors.onPrimary

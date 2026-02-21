@@ -1,7 +1,8 @@
-import { useAppTheme } from '@/state/themeContext';
 import React from 'react';
 import { StyleSheet, View } from 'react-native';
 import { Text } from 'react-native-paper';
+
+import { colors, fontSize } from '@/utils/constants/theme';
 import { CustomTooltip } from '../ui/Tooltip';
 interface FormElementProps {
   placeholder?: string;
@@ -19,9 +20,6 @@ const FormElement = ({
   children,
   errorMessage,
 }: FormElementProps) => {
-  const { theme, setTheme } = useAppTheme();
-  const { colors, fontSize } = theme;
-
   const styles = StyleSheet.create({
     container: {
       marginVertical: size === 'lg' ? 10 : size === 'md' ? 8 : 6,

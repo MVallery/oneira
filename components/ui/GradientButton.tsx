@@ -1,15 +1,9 @@
 import React, { useEffect, useRef } from 'react';
 import { Animated, Pressable, StyleSheet, View } from 'react-native';
 import { Icon } from 'react-native-paper';
-import Svg, {
-  Defs,
-  Ellipse,
-  RadialGradient,
-  Stop
-} from 'react-native-svg';
+import Svg, { Defs, Ellipse, RadialGradient, Stop } from 'react-native-svg';
 
 import CustomText from '@/components/ui/Text';
-import { useAppTheme } from '@/state/themeContext';
 
 export interface CustomButtonProps {
   onPress?: any;
@@ -32,7 +26,6 @@ const GradientButton = ({
   children,
   id,
 }: CustomButtonProps) => {
-  const { theme } = useAppTheme();
   const getBaseOpacity = () => {
     return active ? 1 : 0.4;
   };

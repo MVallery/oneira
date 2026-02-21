@@ -1,8 +1,10 @@
-import { useAppTheme } from '@/state/themeContext';
 import React, { useState } from 'react';
 import { useController } from 'react-hook-form';
 import { StyleSheet, TextInput } from 'react-native';
+
+import { colors } from '@/utils/constants/theme';
 import FormElement from './FormElement';
+
 type DateTextProps = {
   placeholder?: string;
   label?: string;
@@ -30,8 +32,6 @@ export const DateText = ({
   errorMessage,
   validate,
 }: DateTextProps) => {
-  const { theme, setTheme } = useAppTheme();
-  const { colors, fontSize } = theme;
   const {
     field,
     fieldState: { invalid, isTouched, isDirty },

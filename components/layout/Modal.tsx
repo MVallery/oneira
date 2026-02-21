@@ -1,13 +1,8 @@
+import { colors } from '@/utils/constants/theme';
 import React, { useState } from 'react';
 import { StyleSheet, View } from 'react-native';
-import {
-  IconButton,
-  Modal,
-  Portal,
-  Text
-} from 'react-native-paper';
+import { IconButton, Modal, Portal, Text } from 'react-native-paper';
 
-import { useAppTheme } from '@/state/themeContext';
 import ModalConfirm from './ModalConfirm';
 
 interface CustomModalProps {
@@ -31,8 +26,6 @@ const CustomModal: React.FC<CustomModalProps> = ({
   height = 450,
   style,
 }) => {
-  const { theme } = useAppTheme();
-  const { colors } = theme;
   const [confirmClose, setConfirmClose] = useState(false);
 
   const handleClose = () => {

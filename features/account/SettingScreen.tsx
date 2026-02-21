@@ -2,7 +2,7 @@ import CustomButton from '@/components/ui/Button';
 import CustomText from '@/components/ui/Text';
 import { useFormHandler } from '@/hooks/form/useFormHandler';
 import { RootState } from '@/state/store';
-import { useAppTheme } from '@/state/themeContext';
+import { colors } from '@/utils/constants/theme';
 import { clone } from '@/utils/helpers/general';
 import { Link, router } from 'expo-router';
 import { useController } from 'react-hook-form';
@@ -29,7 +29,6 @@ type Settings = {
 type SettingsKey = keyof Settings;
 
 const SettingScreen = () => {
-  const { theme } = useAppTheme();
   const settings = useSelector((state: RootState) => state.account.settings);
   const dispatch = useDispatch();
   const { updateSettings, isLoading } = useUpdateSettings();
@@ -142,7 +141,7 @@ const SettingScreen = () => {
         <View style={{ paddingTop: 15 }}>
           <Link
             href={`/`}
-            style={{ color: theme.colors.onBackground }}
+            style={{ color: colors.onBackground }}
             replace={true}
           >
             <CustomText style={{ fontSize: 18 }}>Cancel</CustomText>

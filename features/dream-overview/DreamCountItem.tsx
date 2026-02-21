@@ -2,6 +2,8 @@ import { View } from 'react-native';
 import { Text } from 'react-native-paper';
 import styled from 'styled-components/native';
 
+import Title from '@/components/ui/Title';
+
 const CountText = styled(Text)`
   font-size: 34px;
 `;
@@ -13,7 +15,7 @@ const CountTextWrapper = styled(View)`
 export const DreamCountItem = ({ title, count }) => {
   return (
     <View>
-      <View>{title}</View>
+      <Title size='sm'>{title}</Title>
       <CountTextWrapper>
         <CountText>{count}</CountText>
       </CountTextWrapper>

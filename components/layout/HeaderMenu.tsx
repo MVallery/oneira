@@ -1,13 +1,12 @@
-import { CustomMenu, CustomMenuItem } from '@/components/ui/Menu';
-import { useLogout } from '@/features/account/hooks/useLogout';
-import { useAppTheme } from '@/state/themeContext';
 import { Link, router } from 'expo-router';
 import { StyleSheet, View } from 'react-native';
 import { Icon } from 'react-native-paper';
 
+import { CustomMenu, CustomMenuItem } from '@/components/ui/Menu';
+import { useLogout } from '@/features/account/hooks/useLogout';
+import { colors } from '@/utils/constants/theme';
+
 export const HeaderMenu = () => {
-  const { theme, setTheme } = useAppTheme();
-  const { colors, fontSize } = theme;
   const { error, logout } = useLogout();
   const styles = StyleSheet.create({
     classHeader: {

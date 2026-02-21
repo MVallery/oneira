@@ -1,17 +1,16 @@
 import PageContainer from '@/components/layout/Page';
 import CustomText from '@/components/ui/Text';
 import AuthSharedScreen from '@/features/account/AuthSharedScreen';
+import { colors } from '@/utils/constants/theme';
 import { useEffect, useState } from 'react';
 import { Linking, View } from 'react-native';
+
 // import { getSupabaseClient } from './supabase/supabase';
 
 import CustomLink from '@/components/ui/Link';
-import { useAppTheme } from '@/state/themeContext';
 // const supabase = getSupabaseClient();
 
 const PasswordResetScreen = () => {
-  const { theme } = useAppTheme();
-  const { colors } = theme;
   const [data, setData] = useState<any>(null);
   const [error, setError] = useState<string | null>(null);
   const [passwordRecovery, setPasswordRecovery] = useState(false);
@@ -78,7 +77,7 @@ const PasswordResetScreen = () => {
         {data && (
           <CustomText
             style={{ maxWidth: 278, paddingTop: 20 }}
-            color={colors.primaryExtraLight}
+            color={colors.primary}
           >
             Password updated successfully! Please login with your new password.
           </CustomText>

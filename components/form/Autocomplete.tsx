@@ -4,7 +4,6 @@ import { Dropdown, MultiSelect } from 'react-native-element-dropdown';
 import { Chip, Text, TextInput } from 'react-native-paper';
 import { v4 as uuid } from 'uuid';
 
-import { useAppTheme } from '@/state/themeContext';
 import { clone } from '@/utils/helpers/general';
 import { webClickable } from '@/utils/styles/baseStyles';
 import FormElement from './FormElement';
@@ -66,8 +65,6 @@ const Autocomplete = ({
   setExcludeOptions,
   onChangeEvent,
 }: AutocompleteProps) => {
-  const { theme, setTheme } = useAppTheme();
-  const { colors, fontSize } = theme;
   const [selectedOptions, setSelectedOptions] = React.useState<OptionValue[]>(
     [],
   );

@@ -8,11 +8,11 @@ import { Platform } from 'react-native';
 const tintColorLight = '#0a7ea4';
 const tintColorDark = '#fff';
 export const categoryColors = {
-  Setting: { bg: 'rgba(17, 97, 57, 15)', border: '#0B472B' },
-  Action: { bg: 'rgba(27, 56, 89, 8)', border: '#27405B' },
+  Setting: { bg: 'rgba(17, 97, 57, 0.322)', border: '#0B472B' },
+  Character: { bg: 'rgba(71, 65, 43, 0.281)', border: '#4B3300' },
+  Action: { bg: 'rgba(27, 56, 89, 0.514)', border: '#27405B' },
+  Other: { bg: 'rgba(89, 27, 27, 0.288)', border: '#3a1414' },
   Emotion: '',
-  Character: { bg: 'rgba(71, 65, 43, 18)', border: '#4B3300' },
-  Other: { bg: 'rgba(89, 27, 27, 12)', border: '#3a1414' },
 };
 export const Colors = {
   light: {

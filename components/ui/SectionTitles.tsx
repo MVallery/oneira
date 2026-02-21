@@ -1,6 +1,6 @@
 import { Text, View } from 'react-native';
 
-import { useAppTheme } from '@/state/themeContext';
+import { colors, fontSize } from '@/utils/constants/theme';
 import Title from './Title';
 
 export const SectionTitles = ({
@@ -10,9 +10,6 @@ export const SectionTitles = ({
   title: string;
   subtitle?: string;
 }) => {
-  const { theme, setTheme } = useAppTheme();
-  const { colors, fontSize } = theme;
-
   return (
     <View
       style={{

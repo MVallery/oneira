@@ -1,10 +1,8 @@
-import { useAppTheme } from '@/state/context/themeContext';
 import { StyleSheet } from 'react-native';
 // const supabase = getSupabaseClient();
+import { colors } from '@/utils/constants/theme';
 
 const LogoutButton = ({ children }: { children?: any }) => {
-  const { theme } = useAppTheme();
-  const { colors } = theme;
   // const {error, logout} = useLogout();
   const styles = StyleSheet.create({
     link: {

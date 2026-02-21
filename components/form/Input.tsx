@@ -1,7 +1,8 @@
-import { useAppTheme } from '@/state/themeContext';
 import React, { forwardRef } from 'react';
 import { useController } from 'react-hook-form';
 import { StyleSheet, TextInput } from 'react-native';
+
+import { colors } from '@/utils/constants/theme';
 import FormElement from './FormElement';
 type CustomInputProps = {
   placeholder?: string;
@@ -46,9 +47,6 @@ const CustomInput = forwardRef<TextInput, CustomInputProps>(
     },
     ref,
   ) => {
-    const { theme, setTheme } = useAppTheme();
-    const { colors, fontSize } = theme;
-
     // Define validation rules
     const rules: any = {
       required,

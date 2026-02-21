@@ -2,7 +2,7 @@ import React from 'react';
 import { StyleSheet } from 'react-native';
 import { Text } from 'react-native-paper';
 
-import { useAppTheme } from '@/state/themeContext';
+import { colors } from '@/utils/constants/theme';
 
 export interface CustomTextProps {
   children: any;
@@ -17,8 +17,7 @@ const CustomText = ({
   style,
   size = 'md',
 }: CustomTextProps) => {
-  const { theme } = useAppTheme();
-  const { colors } = theme;
+  console.log(colors.onBackground);
   const styleObj = StyleSheet.create({
     textStyle: {
       ...style,

@@ -1,7 +1,8 @@
-import { isWeb } from '@/utils/constants/platform';
 import { Link } from 'expo-router';
 import { openBrowserAsync } from 'expo-web-browser';
 import { type ComponentProps } from 'react';
+
+import { isWeb } from '@/utils/constants/platform';
 
 type Props = Omit<ComponentProps<typeof Link>, 'href'> & { href: string };
 

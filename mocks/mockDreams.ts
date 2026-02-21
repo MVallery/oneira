@@ -1,4 +1,4 @@
-import { mockSigns } from './mockSigns';
+import { signs } from './signs';
 
 export const mockDreams = [
   // maybe they tag flying and all flying highlights
@@ -14,7 +14,7 @@ export const mockDreams = [
     date: '2024-06-01T10:00:00Z',
     lastUpdated: '2024-06-01T12:00:00Z',
     favorite: false,
-    signs: [mockSigns[0], mockSigns[5], mockSigns[7]],
+    signs: [signs[0], signs[5], signs[7]],
     emotions: ['calm', 'happy', 'excited'],
 
     level: 0,
@@ -35,7 +35,7 @@ export const mockDreams = [
     date: '2024-06-02T10:00:00Z',
     lastUpdated: '2024-06-02T12:00:00Z',
     favorite: true,
-    signs: [mockSigns[1], mockSigns[7], mockSigns[0]],
+    signs: [signs[1], signs[7], signs[0]],
     emotions: ['calmn'],
 
     level: 1,
@@ -59,7 +59,7 @@ export const mockDreams = [
     date: '2024-06-03T10:00:00Z',
     lastUpdated: '2024-06-03T12:00:00Z',
     favorite: false,
-    signs: [mockSigns[8], mockSigns[9], mockSigns[10], mockSigns[11]],
+    signs: [signs[8], signs[9], signs[10], signs[11]],
     emotions: ['anxiety', 'excited'],
 
     level: 2,

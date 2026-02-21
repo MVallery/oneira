@@ -1,9 +1,11 @@
-import { useAppTheme } from '@/state/themeContext';
 import React from 'react';
 import { StyleSheet } from 'react-native';
 import CalendarPicker from 'react-native-calendar-picker';
+
+import { colors } from '@/utils/constants/theme';
 import { CustomMenu } from '../ui/Menu';
 import CustomInput from './Input';
+
 interface FormElementProps {
   placeholder?: string;
   label?: string;
@@ -18,9 +20,6 @@ const CustomDate = ({
   children,
   control,
 }: FormElementProps) => {
-  const { theme, setTheme } = useAppTheme();
-  const { colors, fontSize } = theme;
-
   const styles = StyleSheet.create({
     container: {
       margin: 10,

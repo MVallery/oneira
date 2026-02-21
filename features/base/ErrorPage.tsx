@@ -1,11 +1,12 @@
-import CustomText from '@/components/ui/Text';
-import Title from '@/components/ui/Title';
-import { useAppTheme } from '@/state/themeContext';
 import { Link } from 'expo-router';
 import { Image, View } from 'react-native';
 import { Icon } from 'react-native-paper';
+
+import CustomText from '@/components/ui/Text';
+import Title from '@/components/ui/Title';
+import { colors } from '@/utils/constants/theme';
+
 export const ErrorPage = () => {
-  const { colors } = useAppTheme();
   return (
     <View
       style={{

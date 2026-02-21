@@ -19,7 +19,7 @@ export function ThemedView({
 
   return (
     <View
-      style={[{ backgroundColor: colors.primaryContainer }, style || {}]}
+      style={[{ backgroundColor: colors.secondaryContainer }, style || {}]}
       {...otherProps}
     />
   );

@@ -2,8 +2,8 @@ import { H1, H2, H3, H4, H5, H6 } from '@expo/html-elements';
 import React from 'react';
 import { Text } from 'react-native-paper';
 
-import { useAppTheme } from '@/state/themeContext';
 import { isWeb } from '@/utils/constants/platform';
+import { colors } from '@/utils/constants/theme';
 
 export interface TitleProps {
   children: any;
@@ -36,9 +36,6 @@ const Title = ({
   size = 'md',
   element = 'h1',
 }: TitleProps) => {
-  const { theme } = useAppTheme();
-  const { colors } = theme;
-
   const fontSizeMap = { xs: 20, sm: 24, md: 30, lg: 36 };
   const Component = tagMap[element] || H1;
 

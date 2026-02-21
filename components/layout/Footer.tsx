@@ -1,11 +1,11 @@
-import CustomLink from '@/components/ui/Link';
-import CustomText from '@/components/ui/Text';
-import { useAppTheme } from '@/state/themeContext';
 import { Link, usePathname } from 'expo-router';
 import { View } from 'react-native';
+
+import CustomLink from '@/components/ui/Link';
+import CustomText from '@/components/ui/Text';
+import { colors } from '@/utils/constants/theme';
+
 const Footer = ({}) => {
-  const { theme } = useAppTheme();
-  const { colors } = theme;
   const pathname = usePathname();
 
   return (

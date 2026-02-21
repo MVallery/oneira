@@ -1,7 +1,8 @@
+import { View } from 'react-native';
+
 import { Tag } from '@/components/ui/Tag';
 import { mockSigns } from '@/mocks/mockSigns';
 import { getCategory } from '@/utils/helpers/general';
-import { View } from 'react-native';
 import { SignFilters } from './SignFilters';
 
 export const SignAnalysisScreen = () => {

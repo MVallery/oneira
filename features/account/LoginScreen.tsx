@@ -1,17 +1,16 @@
 import PageContainer from '@/components/layout/Page';
 import CustomText from '@/components/ui/Text';
 import AuthSharedScreen from '@/features/account/AuthSharedScreen';
-import { useAppTheme } from '@/state/themeContext';
+import { colors } from '@/utils/constants/theme';
 import { useLocalSearchParams } from 'expo-router';
 import { useState } from 'react';
 import { StyleSheet } from 'react-native';
 import { useDispatch } from 'react-redux';
+
 // import { getSupabaseClient } from './supabase/supabase';
 // const supabase = getSupabaseClient();
 
 const LoginScreen = () => {
-  const { theme } = useAppTheme();
-  const { colors } = theme;
   const [error, setError] = useState<string | null>(null);
   const [loading, setLoading] = useState(false);
   const dispatch = useDispatch();

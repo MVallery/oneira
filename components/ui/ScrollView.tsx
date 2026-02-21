@@ -1,5 +1,6 @@
-import { useAppTheme } from '@/state/themeContext';
 import { ScrollView } from 'react-native-gesture-handler';
+
+import { colors } from '@/utils/constants/theme';
 
 type ScrollViewType = {
   style?: any;
@@ -15,8 +16,6 @@ export const CustomScrollView = ({
   children,
   contentContainerStyle,
 }: ScrollViewType) => {
-  const { theme } = useAppTheme();
-  const { colors } = theme;
   return (
     <ScrollView
       horizontal={horizontal}

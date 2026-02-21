@@ -1,11 +1,10 @@
-import { useAppTheme } from '@/state/themeContext';
 import React from 'react';
-import {
-  Pressable,
-  StyleSheet
-} from 'react-native';
+import { Pressable, StyleSheet } from 'react-native';
 import { Checkbox, Icon } from 'react-native-paper';
+
+import { colors } from '@/utils/constants/theme';
 import CustomText from './Text';
+
 // different modes still need to be enabled, colorSaturation /mode not working right
 export interface VerticalButtonProps {
   children: any;
@@ -32,9 +31,6 @@ const VerticalButton = ({
   color,
   status,
 }: VerticalButtonProps) => {
-  const { theme, setTheme } = useAppTheme();
-  const { colors, fontSize } = theme;
-
   const styles = StyleSheet.create({
     sm: {
       paddingVertical: 0,

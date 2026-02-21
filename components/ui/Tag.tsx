@@ -1,6 +1,8 @@
-import { categoryColors } from '@/constants/theme';
 import React, { useMemo, useState } from 'react';
 import styled from 'styled-components/native';
+
+import { categoryColors } from '@/constants/theme';
+import { BoxShadow } from './BoxShadow';
 
 type TagSize = 'sm' | 'md' | 'lg';
 type IconType = 'avatar' | 'dot' | null;
@@ -14,56 +16,42 @@ const Container = styled.View<{
   flex-direction: row;
   align-items: center;
   background-color: ${({ type, category }) =>
-      type === 'transparent-glow' ? 'transparent' : categoryColors[category].bg}
-    #f2f4f7;
-  border: 1px solid
-    ${({ type, category }) =>
-      type.includes('transparent')
-        ? categoryColors[category].border
-        : 'transparent'};
+    type === 'transparent-glow' ? 'transparent' : categoryColors[category].bg};
+  border-width: 1px;
+  border-color: ${({ type, category }) =>
+    type.includes('transparent')
+      ? categoryColors[category].border
+      : 'transparent'};
   border-radius: 6px;
-  padding-left: 8px;
-  padding-right: 8px;
+  padding-left: 20px;
+  padding-right: 20px;
   height: ${({ size }) => HEIGHT_MAP[size]}px;
   box-shadow: ${({ type }) =>
     type === 'transparent-glow' ? '0 0 7 rgba(#CED4FF, 0.44)' : 'none'};
+    shadow-color:#CED4FF;
+    shadow-offset: {width: 0, height: 2};
+    shadow-opacity: 0.8;
+    shadow-radius: 2;
 `;
 
 const Label = styled.Text<{ size: TagSize }>`
   font-size: ${({ size }) => FONT_MAP[size]}px;
   font-weight: 500;
   margin-right: 4px;
-  color: #101828;
-`;
-
-const LeadingDot = styled.View`
-  width: 6px;
-  height: 6px;
-  border-radius: 3px;
-  background-color: #667085;
-  margin-right: 6px;
-`;
-
-const Avatar = styled.Image`
-  width: 16px;
-  height: 16px;
-  border-radius: 8px;
-  margin-right: 6px;
+  color: #ced4ff;
 `;
 
 const CountContainer = styled.View`
-  background-color: #e4e7ec;
   padding: 0 8px;
   justify-content: center;
   align-items: center;
   height: 100%;
-  border-left-width: 1px;
-  border-left-color: #d0d5dd;
 `;
 
 const CountText = styled.Text`
-  font-size: 12px;
+  font-size: 20px;
   font-weight: 500;
+  color: #667085;
 `;
 
 const CloseButton = styled.TouchableOpacity`
@@ -101,8 +89,8 @@ interface TagProps {
 
 const HEIGHT_MAP = {
   sm: 20,
-  md: 24,
-  lg: 26,
+  md: 36,
+  lg: 46,
 };
 
 const FONT_MAP = {
@@ -133,30 +121,27 @@ export const Tag: React.FC<TagProps> = ({
     setActive(false);
     onPress?.();
   };
-
+  console.log('cateogry....', category);
   if (!active) return null;
 
   return (
-    <Container size={size} type={type} category={category}>
-      {checkbox && <FakeCheckbox size={checkboxSize} />}
+    <BoxShadow size='sm'>
+      <Container size={size} type={type} category={category}>
+        {checkbox && <FakeCheckbox size={checkboxSize} />}
+        <Label size={size}>{label}</Label>
 
-      {icon === 'dot' && <LeadingDot />}
+        {action === 'close' && (
+          <CloseButton onPress={handleClose}>
+            <CloseText>×</CloseText>
+          </CloseButton>
+        )}
 
-      {icon === 'avatar' && iconSrc && <Avatar source={{ uri: iconSrc }} />}
-
-      <Label size={size}>{label}</Label>
-
-      {action === 'close' && (
-        <CloseButton onPress={handleClose}>
-          <CloseText>×</CloseText>
-        </CloseButton>
-      )}
-
-      {action === 'count' && count !== null && (
-        <CountContainer>
-          <CountText>{count}</CountText>
-        </CountContainer>
-      )}
-    </Container>
+        {action === 'count' && count !== null && (
+          <CountContainer>
+            <CountText>{count}</CountText>
+          </CountContainer>
+        )}
+      </Container>
+    </BoxShadow>
   );
 };

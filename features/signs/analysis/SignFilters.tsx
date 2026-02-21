@@ -1,7 +1,8 @@
+import { View } from 'react-native';
+
 import CustomInput from '@/components/form/Input';
 import { FlexView } from '@/components/layout/BaseViews';
 import Title from '@/components/ui/Title';
-import { View } from 'react-native';
 // build the below item but using styled components
 
 export const SignFilters = () => {

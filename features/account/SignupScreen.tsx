@@ -1,13 +1,11 @@
 import PageContainer from '@/components/layout/Page';
 import AuthSharedScreen from '@/features/account/AuthSharedScreen';
-import { useAppTheme } from '@/state/themeContext';
+
 // import { useSignup } from './hooks/useSignup';
 // import { getSupabaseClient } from './supabase/supabase';
 // const supabase = getSupabaseClient();
 
 const SignupScreen = ({ paragraph }: { paragraph: string }) => {
-  const { theme } = useAppTheme();
-  const { colors } = theme;
   // const { error, loading, data, signup } = useSignup();
 
   return (

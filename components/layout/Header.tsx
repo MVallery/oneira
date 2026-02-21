@@ -1,15 +1,15 @@
-import { RootState } from '@/state/store';
-import { useAppTheme } from '@/state/themeContext';
 import { Link, usePathname } from 'expo-router';
 import { useEffect, useState } from 'react';
 import { Image, View } from 'react-native';
 import { Icon } from 'react-native-paper';
 import { useSelector } from 'react-redux';
+
+import { RootState } from '@/state/store';
+import { colors } from '@/utils/constants/theme';
 import { HeaderMenu } from './HeaderMenu';
+
 const classesButtonPaths = ['/', '/privacy_policy', '/terms_of_service'];
 const Header = ({}) => {
-  const { theme } = useAppTheme();
-  const { colors } = theme;
   const pathname = usePathname();
   const [showClassesButton, setShowClassesButton] = useState(false);
   const user = useSelector((state: RootState) => state.auth.user);

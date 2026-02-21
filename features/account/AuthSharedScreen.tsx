@@ -3,9 +3,10 @@ import CustomButton from '@/components/ui/Button';
 import CustomLink from '@/components/ui/Link';
 import CustomText from '@/components/ui/Text';
 import { useAuthForm } from '@/features/account/hooks/useAuth';
-import { useAppTheme } from '@/state/themeContext';
 import { isIOS, isWeb } from '@/utils/constants/platform';
+import { colors } from '@/utils/constants/theme';
 import { Image, KeyboardAvoidingView, View } from 'react-native';
+
 // import AsyncStorage from "@react-native-async-storage/async-storage";
 
 type AuthSharedScreenProps = {
@@ -36,8 +37,6 @@ const AuthSharedScreen = ({
   type,
 }: AuthSharedScreenProps) => {
   const { control, handleSubmit, errors } = useAuthForm(onSubmit);
-  const { theme } = useAppTheme();
-  const { colors } = theme;
   // const saveEmail = async (email: string) => {
   //   await AsyncStorage.setItem("savedEmail", email);
   // };

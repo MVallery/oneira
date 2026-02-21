@@ -1,15 +1,14 @@
 import PageContainer from '@/components/layout/Page';
 import CustomText from '@/components/ui/Text';
 import AuthSharedScreen from '@/features/account/AuthSharedScreen';
-import { useAppTheme } from '@/state/themeContext';
+import { colors } from '@/utils/constants/theme';
 import { useEffect, useState } from 'react';
 import { useDispatch } from 'react-redux';
+
 // import { getSupabaseClient } from './supabase/supabase';
 // const supabase = getSupabaseClient();
 
 const ForgotPasswordScreen = () => {
-  const { theme } = useAppTheme();
-  const { colors } = theme;
   const [data, setData] = useState<any>(null);
   const [error, setError] = useState<string | null>(null);
   const dispatch = useDispatch();

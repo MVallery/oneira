@@ -1,11 +1,8 @@
 import React from 'react';
 import { Pressable, StyleSheet, View } from 'react-native';
-import {
-  IconButton,
-  Menu
-} from 'react-native-paper';
+import { IconButton, Menu } from 'react-native-paper';
 
-import { useAppTheme } from '@/state/themeContext';
+import { colors } from '@/utils/constants/theme';
 
 export interface Props {
   children: any;
@@ -34,13 +31,11 @@ export const CustomMenuItem = ({
   closeMenu?: any;
   showNegativeBar?: boolean;
 }) => {
-  const { theme, setTheme } = useAppTheme();
-  const { colors, fontSize } = theme;
   const styles = StyleSheet.create({
     negativeIcon: {
       width: 2,
       height: 30,
-      backgroundColor: colors.primaryLight,
+      backgroundColor: colors.primary,
       position: 'absolute',
       top: 7,
       left: 23,
@@ -50,7 +45,7 @@ export const CustomMenuItem = ({
       width: 30,
       height: 30,
       borderWidth: 2,
-      borderColor: colors.primaryLight,
+      borderColor: colors.primary,
       borderRadius: 15,
     },
   });

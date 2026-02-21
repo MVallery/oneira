@@ -1,7 +1,8 @@
+import { View } from 'react-native';
+
 import { CustomSelect } from '@/components/form/Select';
 import Title from '@/components/ui/Title';
 import { mockDreams } from '@/mocks/mockDreams';
-import { View } from 'react-native';
 import { DreamCountItem } from './DreamCountItem';
 // TO DO: make filter work
 export const OverviewHeader = () => {

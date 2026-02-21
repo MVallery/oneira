@@ -18,17 +18,11 @@ export const appTheme = {
   colors: {
     // ...DefaultTheme.colors,
 
-    primary: '#f17c1cf6', // Deep Orange
-    onPrimary: '#fff', // Light contrast for readability
-    primaryContainer: '#a34b0d', // Muted deep orange for containers
-    onPrimaryContainer: '#ffe1c8', // Light contrast for readability
-
-    primaryDark: '#8a3200', // Darker deep orange
-    primaryLight: '#ffb570', // Lighter deep orange
-    primaryExtraLight: '#ffe1c8',
+    primary: '#ced4ff',
+    onPrimary: '#201A56',
 
     secondary: '#0a192f', // Deep Navy Blue
-    onSecondary: '#c8dcff', // Light blue for readability
+    onSecondary: '#ced4ff', // Light blue for readability
     secondaryContainer: '#142846', // Darker blue for containers
     onSecondaryContainer: '#e6f0ff', // Light contrast for readability
     secondaryDark: '#030d1b', // Darker deep navy blue

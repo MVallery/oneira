@@ -7,7 +7,7 @@ import 'react-native-reanimated';
 
 import Header from '@/components/layout/Header';
 import { store } from '@/state/store';
-import { ThemeProvider, useAppTheme } from '@/state/themeContext';
+import { ThemeProvider } from '@/state/themeContext';
 import { StyleSheet, View } from 'react-native';
 import { GestureHandlerRootView } from 'react-native-gesture-handler';
 import { SafeAreaProvider, SafeAreaView } from 'react-native-safe-area-context';
@@ -16,7 +16,9 @@ import { Provider } from 'react-redux';
 // SplashScreen.preventAutoHideAsync();
 import { ErrorPage } from '@/features/base/ErrorPage';
 import { isWeb } from '@/utils/constants/platform';
+import { colors } from '@/utils/constants/theme';
 import ErrorBoundary from '@/utils/errorBoundary';
+import { baseStyles } from '@/utils/styles/baseStyles';
 import { Portal } from 'react-native-paper';
 // import { GoogleAnalytics } from '@/features/base/GoogleAnalytics';
 // fix for structuredClone not being available in mobile
@@ -24,8 +26,6 @@ if (typeof global.structuredClone === 'undefined') {
   global.structuredClone = (value) => JSON.parse(JSON.stringify(value));
 }
 export default function RootLayout() {
-  const { theme, setTheme } = useAppTheme();
-  const { colors } = theme;
   const [loaded] = useFonts({
     SpaceMono: require('../assets/fonts/SpaceMono-Regular.ttf'),
   });
@@ -37,6 +37,7 @@ export default function RootLayout() {
       flex: 1,
       justifyContent: 'center',
       alignItems: 'center',
+      width: '100%',
       // for now mobile has no main header, so give it a bit of padding
       paddingTop: isWeb ? 0 : 0,
     },
@@ -93,7 +94,7 @@ export default function RootLayout() {
                 <SafeAreaView style={{ flex: 1, backgroundColor: '#fff' }}>
                   <StatusBar style='light' backgroundColor={'red'} />
                   {(isWeb || pathname.startsWith('/')) && <Header />}
-                  <View style={{ flex: 1 }}>
+                  <View style={[{ flex: 1 }, baseStyles.container]}>
                     {/* {isWeb && <GoogleAnalytics />} */}
 
                     <Stack

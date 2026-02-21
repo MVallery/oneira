@@ -1,26 +1,26 @@
 export const categories = {
-  setting: {
+  1: {
     id: '1',
     name: 'Setting',
     key: 'setting',
     color: '#FF5733',
     default: true,
   },
-  characters: {
+  2: {
     id: '2',
-    name: 'Characters',
+    name: 'Character',
     key: 'characters',
     color: '#33FF57',
     default: true,
   },
-  actions: {
+  3: {
     id: '3',
-    name: 'Actions',
+    name: 'Action',
     key: 'actions',
     color: '#3357FF',
     default: true,
   },
-  other: {
+  4: {
     id: '4',
     name: 'Other',
     key: 'other',

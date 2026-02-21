@@ -1,12 +1,8 @@
-// properties
-// size, sm md lg
-// textLocation, top, bottom, right
-// color?
-
-import CustomText from '@/components/ui/Text';
-import { useAppTheme } from '@/state/themeContext';
 import { View } from 'react-native';
 import { Checkbox } from 'react-native-paper';
+
+import CustomText from '@/components/ui/Text';
+import { colors } from '@/utils/constants/theme';
 
 export const CustomCheckbox = ({
   label = '',
@@ -17,8 +13,6 @@ export const CustomCheckbox = ({
   onPress: any;
   status: boolean;
 }) => {
-  const { theme } = useAppTheme();
-  const { colors } = theme;
   const checkBox = (
     <Checkbox
       status={status ? 'checked' : 'unchecked'}

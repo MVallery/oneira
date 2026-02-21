@@ -3,7 +3,7 @@ import { useController } from 'react-hook-form';
 import { StyleSheet, View } from 'react-native';
 import { Chip } from 'react-native-paper';
 
-import { useAppTheme } from '@/state/themeContext';
+import { colors } from '@/utils/constants/theme';
 import FormElement from './FormElement';
 import { FormElementType } from './types/formElement';
 import { OptionValue } from './types/optionValue';
@@ -19,7 +19,6 @@ interface ChipSelectProps extends FormElementType {
 //   label: string;
 //   selected?: boolean;
 // }
-
 const ChipSelect = ({
   placeholder,
   name,
@@ -30,8 +29,6 @@ const ChipSelect = ({
   isMultiSelect = true,
   onChangeEvent,
 }: ChipSelectProps) => {
-  const { theme, setTheme } = useAppTheme();
-  const { colors, fontSize } = theme;
   // removed a condiditional here
   const { field } = useController({ control, defaultValue: '', name });
 
@@ -130,7 +127,7 @@ const ChipSelect = ({
           style={style}
           onClose={() => removeOption(option, index)}
           onPress={() => removeOption(option, index)}
-          theme={theme}
+          theme={{ colors: colors }}
         >
           {option.label}
         </Chip>
@@ -139,7 +136,7 @@ const ChipSelect = ({
           key={index}
           style={style}
           onPress={() => selectOption(option, index)}
-          theme={theme}
+          theme={{ colors: colors }}
         >
           {option.label}
         </Chip>
