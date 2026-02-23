@@ -57,3 +57,7 @@ export const colors = {
   onSurfaceDisabled: 'rgba(28, 27, 30, 0.38)',
   backdrop: 'rgba(50, 47, 56, 0.4)',
 };
+
+export const styleVars = {
+  mainPadding: 20,
+};

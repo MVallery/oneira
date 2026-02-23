@@ -4,6 +4,7 @@ import { Dropdown, MultiSelect } from 'react-native-element-dropdown';
 import { Chip, Text, TextInput } from 'react-native-paper';
 import { v4 as uuid } from 'uuid';
 
+import { colors } from '@/utils/constants/theme';
 import { clone } from '@/utils/helpers/general';
 import { webClickable } from '@/utils/styles/baseStyles';
 import FormElement from './FormElement';
@@ -77,7 +78,7 @@ const Autocomplete = ({
   const styles: any = StyleSheet.create({
     input: {
       height: 50,
-      borderColor: colors.tertiary,
+      borderColor: colors.primary,
       borderWidth: 1,
       borderRadius: 10,
       paddingHorizontal: 15,
@@ -346,68 +347,3 @@ const Autocomplete = ({
 };
 
 export default Autocomplete;
-
-// old from custom autocomplete component
-
-// openOnFocus?: boolean;
-// emptySearchMessage?: string;
-// strictSearch?: boolean;
-// openOnFocus = true,
-// emptySearchMessage = 'No Results Found, Try another Search',
-// resetOnSelect = true,
-// strictSearch = true,
-// const [filteredOptions, setFilteredOptions] = React.useState<OptionValue[]>([]);
-// const [filterText, setFilterText] = React.useState<string>('');
-// const [searchTimeout, setSearchTimeout] = React.useState<any>(null);
-// const [showEmptySearchMessage, setShowEmptySearchMessage] = React.useState<boolean>(false);
-// const [value, setValue] = useState(null);
-// const [selected, setSelected] = useState([]);
-
-// const [open, setOpen] = React.useState<boolean>(false);
-// const [hasClosed, setHasClosed] = React.useState<boolean>(false);
-// const delay = 300;
-// const inputRef = useRef<TextInput>(null);
-// // const dropdownRef = useRef<View | null>(null);
-//           // selected
-//           value={field.value}
-//           onFocus={() => setIsFocus(true)}
-//           onBlur={() => setIsFocus(false)}
-
-// renderInputSearch: (onSearch: any) => {
-//   return onSearch ? onSearch(filterText) : null;
-//   console.log('renderInputSearch', text);
-//   return <View><CustomText>'what'</CustomText></View>
-// },    // excludeItems: selectedOptions.map((option) => {
-// //   option.
-// // })
-//  renderInputSearch: (onSearch) => (
-//     <CustomInput
-//       searchText={searchText}
-//       setSearchText={setSearchText}
-//       onSearch={onSearch}
-//     />
-//   ),
-//     renderInputSearch:{(onSearch) => (
-//   <TextInput
-//     value={searchText}
-//     onChangeText={(text) => {
-//       setSearchText(text)
-//       onSearch(text)
-//     }}
-//     placeholder="Search..."
-//     style={{ padding: 10, borderBottomWidth: 1 }}
-//   />
-// )}
-
-// determinePosition(): void {
-//   const bounds = inputRef?.nativeElement.getBoundingClientRect();
-//   const fromBottom = window.innerHeight - bounds.bottom;
-//   const fromTop = bounds.top;
-
-//   // Too close to bottom flips it upwards
-//   if (fromBottom < 225 && fromTop > 225) {
-//     position = 'top';
-//   } else {
-//     position = 'bottom';
-//   }
-// }

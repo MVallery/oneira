@@ -26,12 +26,6 @@ const Container = styled.View<{
   padding-left: 20px;
   padding-right: 20px;
   height: ${({ size }) => HEIGHT_MAP[size]}px;
-  box-shadow: ${({ type }) =>
-    type === 'transparent-glow' ? '0 0 7 rgba(#CED4FF, 0.44)' : 'none'};
-    shadow-color:#CED4FF;
-    shadow-offset: {width: 0, height: 2};
-    shadow-opacity: 0.8;
-    shadow-radius: 2;
 `;
 
 const Label = styled.Text<{ size: TagSize }>`

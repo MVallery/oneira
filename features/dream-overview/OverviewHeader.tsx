@@ -1,13 +1,18 @@
 import { View } from 'react-native';
 
 import { CustomSelect } from '@/components/form/Select';
+import { FlexCenterView } from '@/components/layout/BaseViews';
 import Title from '@/components/ui/Title';
 import { mockDreams } from '@/mocks/mockDreams';
+import styled from 'styled-components/native';
 import { DreamCountItem } from './DreamCountItem';
 // TO DO: make filter work
+const OverviewHeaderView = styled(View)`
+  justify-content: space-between;
+`;
 export const OverviewHeader = () => {
   return (
-    <View>
+    <OverviewHeaderView>
       <View>
         <Title>Dream Analysis</Title>
         <CustomSelect
@@ -20,13 +25,13 @@ export const OverviewHeader = () => {
           name='timeframe'
         />
       </View>
-      <View>
+      <FlexCenterView>
         <DreamCountItem count={mockDreams.length} title='Logged Dreams' />
         <DreamCountItem
           count={mockDreams.filter((dream) => dream.level === 2).length}
           title='Lucid Dreams'
         />
-      </View>
-    </View>
+      </FlexCenterView>
+    </OverviewHeaderView>
   );
 };

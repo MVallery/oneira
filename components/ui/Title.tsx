@@ -36,14 +36,14 @@ const Title = ({
   size = 'md',
   element = 'h1',
 }: TitleProps) => {
-  const fontSizeMap = { xs: 20, sm: 24, md: 30, lg: 36 };
+  const fontSizeMap = { xs: 16, sm: 20, md: 24, lg: 36 };
   const Component = tagMap[element] || H1;
 
   return (
     <Component
       style={[
         {
-          color: color || style?.color || colors.onBackground,
+          color: color || style?.color || colors.primary,
           fontSize: fontSizeMap[size],
           margin: 0,
           fontWeight: 'bold',

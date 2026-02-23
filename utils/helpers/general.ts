@@ -47,3 +47,23 @@ export const getCategory = (categoryId: string) => {
       return 'Other';
   }
 };
+
+export const formatDate = (date) => {
+  const year = new Date(date).getFullYear();
+  const yearNow = new Date().getFullYear();
+  const dateObj: any = {
+    month: 'short',
+    day: 'numeric',
+  };
+  if (year < yearNow) {
+    dateObj.year = '2-digit';
+  }
+  return new Date(date).toLocaleDateString(undefined, dateObj);
+};
+
+export const formatTime = (date) => {
+  return new Date(date).toLocaleTimeString([], {
+    hour: 'numeric',
+    minute: '2-digit',
+  });
+};

@@ -1,15 +1,15 @@
-import { FlexView } from '@/components/layout/BaseViews';
+import { CenterView, FlexCenterView } from '@/components/layout/BaseViews';
 import { Tag } from '@/components/ui/Tag';
-import CustomText from '@/components/ui/Text';
+import Title from '@/components/ui/Title';
 import { categories } from '@/utils/constants/models/categories';
+import { Link } from 'expo-router';
 import styled from 'styled-components/native';
 
-const DreamSignView = styled.View`
+const DreamSignView = styled(CenterView)`
   padding: 10px 0;
-  gap: 10px;
 `;
 
-const WrapSigns = styled(FlexView)`
+const WrapSigns = styled(FlexCenterView)`
   flex-wrap: wrap;
   gap: 8px;
 `;
@@ -17,18 +17,20 @@ const WrapSigns = styled(FlexView)`
 export const DreamSignSection = ({ title, signs }) => {
   console.log('Rendering DreamSignSection with signs:', signs);
   return (
-    <DreamSignView>
-      <CustomText>{title}</CustomText>
+    <DreamSignView gap={10}>
+      <Title size='sm'>{title}</Title>
       <WrapSigns>
         {signs.map((sign) => (
-          <Tag
-            key={sign.id}
-            label={sign.name}
-            count={sign.count}
-            category={categories[sign.category].name}
-            action='count'
-            type='transparent-glow'
-          />
+          <Link key={sign.id} href={`/sign_details/${sign.id}`}>
+            <Tag
+              key={sign.id}
+              label={sign.name}
+              count={sign.count}
+              category={categories[sign.category].name}
+              action='count'
+              type='transparent-glow'
+            />
+          </Link>
         ))}
       </WrapSigns>
     </DreamSignView>

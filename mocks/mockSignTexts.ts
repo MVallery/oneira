@@ -6,7 +6,7 @@ export const mockSignTextsObj = {
     {
       id: '1',
       dream: mockDreams[0],
-      text: 'flying over a city',
+      text: ` I wish I could fly in real life too! I was flying like a bird, with my arms spread out. I could feel the wind on my face and the sun on my skin.`,
       signs: [mockSigns[0]],
     },
   ],
